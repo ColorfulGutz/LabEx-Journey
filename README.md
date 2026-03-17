@@ -19,8 +19,15 @@ Using openssl, I created a file holding private information and via the commandl
 <img width="791" height="400" alt="image" src="https://github.com/user-attachments/assets/5ddd746c-5ed5-4a5b-b07c-3b38af1636eb" />
 
 - Setting up a port listener using netcat and connecting to it, using some of its functions
-Using netcat, I had one terminal set up a listener on port 12345. Then opening another terminal, connected to port 12345 on localhost, allowing me to comunicate between the two terminals. I then set up the listener to output incoming data into a file, setting up netcat on the other terminal to send the file.
 
+Using netcat, I had one terminal set up a listener on port 12345. Then opening another terminal, connected to port 12345 on localhost, allowing me to comunicate between the two terminals. I then set up the listener to output incoming data into a file, setting up netcat on the other terminal to send the file.
 <img width="1054" height="231" alt="image" src="https://github.com/user-attachments/assets/3e5915f4-af18-4122-955a-b38a9860948a" />
 
+- Monitored my own network, capturing and analysing network traffic on a VM using Wireshark
 
+Setting up wireshark, I added my user to the wireshark group and configuring dumpcap to have elevated priveleges. I selected the interface I was using and began scanning the network. To test, I opened another terminal and curled http://example.com, then saved the packets and viewed them, explicitly searching for http and finding what I curled. Utilizing the filter, I specfied viewing of only `tcp && ip.addr == 104.18.26.120` which is the ip address of example.com. I also used the filter to view only the http get request and if the host contains example.com via `http.request.method == "GET" && http.host contains "example.com"`. Tested out saving filters and exported the http requests.
+<img width="1885" height="981" alt="image" src="https://github.com/user-attachments/assets/3d1b02b8-f157-4f41-9a70-2d202d0a315a" />
+
+- Brute forcing SSH with Hydra
+
+Using a VM I installed the OpenSSH server package to turn my machine into an SSH server that can accept remote connections. I created a test user and configuring SSH to allow password authentification
