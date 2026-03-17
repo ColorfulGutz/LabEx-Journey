@@ -18,4 +18,9 @@ I scanned my virtual machines network finding open ports hosting services such a
 Using openssl, I created a file holding private information and via the commandline, passed flags specifying my encryption method, adding random data to prevent identical messages from looking the same when encrypted, and using password based key derivation function 2 to securely generate encryption keys from passwords.
 <img width="791" height="400" alt="image" src="https://github.com/user-attachments/assets/5ddd746c-5ed5-4a5b-b07c-3b38af1636eb" />
 
+- Setting up a port listener using netcat and connecting to it, using some of its functions
+Using netcat, I had one terminal set up a listener on port 12345. Then opening another terminal, connected to port 12345 on localhost, allowing me to comunicate between the two terminals. I then set up the listener to output incoming data into a file, setting up netcat on the other terminal to send the file.
+
+<img width="1054" height="231" alt="image" src="https://github.com/user-attachments/assets/3e5915f4-af18-4122-955a-b38a9860948a" />
+
 
