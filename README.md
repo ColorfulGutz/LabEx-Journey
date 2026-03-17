@@ -8,14 +8,11 @@ Using a set up web browswer interface containing fields for entering a username 
 <img width="1428" height="397" alt="image" src="https://github.com/user-attachments/assets/eb2f7167-4ddd-42ff-8eaa-cc31f9908452" />
 
 - Using Nmap on a network
-I scanned my virtual machines network finding open ports hosting services such as ssh on port 22, ppp on port 3000, and nessus on port 3001.
+I scanned my virtual machines network finding open ports hosting services such as ssh on port 22, ppp on port 3000, and nessus on port 3001. Passing some flags to it I can find the OS via `-O`, read targets from a file `-iL <file>`, do a SYN scan `-sS`, scan specific ports `-p`, save to a file `-oN <file>`or even use decoys by `-D <decoys>`. I can also scan a range of ips on a network like for example, `nmap 172.19.0.1-20` or scan an entire subnet `nmap 172.19.0.1/24`.
 <img width="614" height="175" alt="image" src="https://github.com/user-attachments/assets/80d25be2-a4f5-4c75-b9d6-6bc05cc533ef" />
-
-Passing some flags to it I can find the OS via `-O`, read targets from a file `-iL <file>`, do a SYN scan `-sS`, scan specific ports `-p`, save to a file `-oN <file>`or even use decoys by `-D <decoys>`. I can also scan a range of ips on a network like for example, `nmap 172.19.0.1-20` or scan an entire subnet `nmap 172.19.0.1/24`.
 
 - Performing cryptographic operations like encrypting a message using Openssl
 Using openssl, I created a file holding private information and via the commandline, passed flags specifying my encryption method, adding random data to prevent identical messages from looking the same when encrypted, and using password based key derivation function 2 to securely generate encryption keys from passwords.
 <img width="791" height="400" alt="image" src="https://github.com/user-attachments/assets/5ddd746c-5ed5-4a5b-b07c-3b38af1636eb" />
 
-- 
 
