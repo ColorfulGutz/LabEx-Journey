@@ -30,4 +30,7 @@ Setting up wireshark, I added my user to the wireshark group and configuring dum
 
 - Brute forcing SSH with Hydra
 
-Using a VM I installed the OpenSSH server package to turn my machine into an SSH server that can accept remote connections. I created a test user and configuring SSH to allow password authentification
+Using a VM I installed the OpenSSH server package to turn my machine into an SSH server that can accept remote connections. I created a test user, set its password, configured SSH to allow password authentification, created a usernames and passwords file, as well as installing a tool named crunch to generate a more comprehensive password list specifying a minimum of 4 characters and a maximum of 6 with a allowed character set of 0-9. Though I dont use crunch in this since itd make the brute force much longer, a useful and interesting tool is noteworthy.
+
+<img width="1427" height="457" alt="image" src="https://github.com/user-attachments/assets/1c61e5c9-733c-4613-b7bd-9119bc07c4d4" />
+
