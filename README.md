@@ -1,7 +1,7 @@
 # LabEx-Journey
 This repo acts as documentation of subjects and activites I have engaged in through virtual guided labs offered by the site labex.io which I use to teach Cybersecurity concepts to me.
 
-## Activities I've engaged in
+## Activities I've engaged in correlating to the broader Cybersecurity
 
 - Using Hydra to Crack Passwords
 
@@ -36,6 +36,8 @@ Using a VM I installed the OpenSSH server package to turn my machine into an SSH
 <img width="1427" height="457" alt="image" src="https://github.com/user-attachments/assets/1c61e5c9-733c-4613-b7bd-9119bc07c4d4" />
 
 - Scanning a network for vulnerabilities and expanding use of Nmap
-To start off, I do a regular scan of the network, finding basic information of the services hosted on the top 1000 ports and find a few. Digging deeper, I run a scan targetting specific ports I found in the original scan, and now checking the services version to see if I can spot vulnerabilities with outdated software. I find that the services are up to date so I instead run a scan with default scripts to gather more information, after running I find nothing much of use. I then decide to combine the service version with a vuln script to perform a broad vulnerability scan and save it to a file, once the scan is complete I see numerous vulnerabilities.
+To start off, I do a regular scan of the network, finding basic information of the services hosted on the top 1000 ports and find a few. Digging deeper, I run a scan targetting specific ports I found in the original scan, and now checking the services version to see if I can spot vulnerabilities with outdated software. I find that the services are up to date so I instead run a scan with default scripts to gather more information, after running I find nothing much of use. I then decide to combine the service version with a vuln script to perform a broad vulnerability scan and save it to a file, once the scan is complete I see numerous vulnerabilities overall resulting in a vulnerable network.
+<img width="1671" height="669" alt="image" src="https://github.com/user-attachments/assets/56b856d9-f7df-4bc2-a2dd-12bdfa8ced98" />
+<img width="654" height="64" alt="image" src="https://github.com/user-attachments/assets/f499982d-04e6-4959-84e7-c087d7463c9a" />
 
 
