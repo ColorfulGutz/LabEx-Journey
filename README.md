@@ -40,4 +40,9 @@ To start off, I do a regular scan of the network, finding basic information of t
 <img width="1671" height="669" alt="image" src="https://github.com/user-attachments/assets/56b856d9-f7df-4bc2-a2dd-12bdfa8ced98" />
 <img width="654" height="64" alt="image" src="https://github.com/user-attachments/assets/f499982d-04e6-4959-84e7-c087d7463c9a" />
 
+- Creating a key and using it to encrypt a file with OpenSSL
+I began by creating my file, storing the information I wanted encrypted and then saving it. Then using a tool offered by OpenSSL, I generated 32 bytes of random data and saved it in hexdecimal format to a file that Ill use as my key. Since the key can unlock my data, I made sure to change its permission to be only usable by the file owner. I then encrypted my file, using aes-256-cbc as my encryption cipher and using my created key file as the password.
+<img width="784" height="420" alt="image" src="https://github.com/user-attachments/assets/a6db477e-8062-47d1-ac2b-a376eb218a7b" />
 
+- Doing more filtering with Wireshark, using more of its tools and the command line version
+Using an already made packet capture file, I view a detailed summary with capinfos targetting the file, showing off its file name encapsulation, number of packets, and much more. I then view the first 5 packets of the capture file, messing with filters offered by the flag `-Y`, and saving the filtered output to a file with `-w`.
