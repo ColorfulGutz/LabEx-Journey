@@ -36,26 +36,32 @@ Using a VM I installed the OpenSSH server package to turn my machine into an SSH
 <img width="1427" height="457" alt="image" src="https://github.com/user-attachments/assets/1c61e5c9-733c-4613-b7bd-9119bc07c4d4" />
 
 - Scanning a network for vulnerabilities and expanding use of Nmap
+
 To start off, I do a regular scan of the network, finding basic information of the services hosted on the top 1000 ports and find a few. Digging deeper, I run a scan targetting specific ports I found in the original scan, and now checking the services version to see if I can spot vulnerabilities with outdated software. I find that the services are up to date so I instead run a scan with default scripts to gather more information, after running I find nothing much of use. I then decide to combine the service version with a vuln script to perform a broad vulnerability scan and save it to a file, once the scan is complete I see numerous vulnerabilities overall resulting in a vulnerable network.
 <img width="1671" height="669" alt="image" src="https://github.com/user-attachments/assets/56b856d9-f7df-4bc2-a2dd-12bdfa8ced98" />
 <img width="654" height="64" alt="image" src="https://github.com/user-attachments/assets/f499982d-04e6-4959-84e7-c087d7463c9a" />
 
 - Creating a key and using it to encrypt a file with OpenSSL
+
 I began by creating my file, storing the information I wanted encrypted and then saving it. Then using a tool offered by OpenSSL, I generated 32 bytes of random data and saved it in hexdecimal format to a file that Ill use as my key. Since the key can unlock my data, I made sure to change its permission to be only usable by the file owner. I then encrypted my file, using aes-256-cbc as my encryption cipher and using my created key file as the password.
 <img width="784" height="420" alt="image" src="https://github.com/user-attachments/assets/a6db477e-8062-47d1-ac2b-a376eb218a7b" />
 
 - Doing more filtering with Wireshark, using more of its tools and the command line version
+
 Using an already made packet capture file, I view a detailed summary with capinfos targetting the file, showing off its file name encapsulation, number of packets, and much more. I then view the first 5 packets of the capture file, messing with filters offered by the flag `-Y`, and saving the filtered output to a file with `-w`. Finally, utilizing many flags offered by tshark, I create a packet capture file that is just as detailed as one in wireshark.
 <img width="1474" height="261" alt="image" src="https://github.com/user-attachments/assets/b71133ae-e359-41d8-ae7a-0c82cf9f7e60" />
 
 - Cracking ZIP passwords with John the Ripper
+
 I start by cloning the git repository for john the ripper and specify the bleeding jumbo branch, as well as making the depth only one. I then cd into the directory and with the already installed tools, I make and clean. I then make some aliases so that I can use the commands anywhere. I test the aliases to check if they worked, then create a file needing to be encrypted and kept secret. Afterwards I use ZIP with its encryption feature putting a password onto my newly created zip file. Once thats done, I then use the zip2john tool where I input the zip file into, and it outputs details about the encrypted file including compression and encryption parameters. This information is vital to using John the Ripper so that it can crack the hash now having the hash and the encryption type. 
 <img width="1312" height="566" alt="image" src="https://github.com/user-attachments/assets/f2513e26-a17b-4921-bed0-09ab3a292e79" />
 
 - Monitoring files in Tripwire
+
 To start off, I generate cryptographical keys manually using twadmin for both the site, which protects the policy and configuration files, and local, which protectsthe database on the local machine. I then create a simplified policy that focuses on essential system files and my project directory since the default policy may have compatibility issues and cause segmentation faults during intialization. For this process, I copy the tripwire policy making a backup and then replace the original with my own policy. Once thats done I recreate my configuration file to make sure everything is compatible, I do this by passing the create config file flag and pass my site keyfile. After thats finished I then convert the simplified policy file into the signed binary format that Tripwire uses. Once all that is complete, I can then initialize my Tripwire database, scanning all files and directories specficified in my policy that I created. It expectedly prompts me that a file in /var/lib/triwpire/ hasnt been created because that will be the database file, checking that directory once its finished verifies that my baseline database has been created. I then create a file and perform a check with tripwire to see if it detects it and sure enough, it does. It prints out a long detailed report which can also be viewed in /var/lib/tripwire/report/<file> which must be viewed with twprint since its in binary.
 <img width="1293" height="994" alt="image" src="https://github.com/user-attachments/assets/c8e70e46-2924-4885-bf6d-f6df9116f5ca" />
 
 - Scanning ports with Masscan
+
 First I install Masscan from source. Once thats complete I have access to the tool systemwide and start off creating a file to hold my targets I plan to use with Masscan. I now use the masscan tool, targetting ports 22, 80, 443, and 8080 and using the target file I have just created, also making sure to set the packet transmission rate to 1000 per second and output the result into a file .gnmap. Once the scan is complete, it shows that one host was found to have a port open for SSH. Afterwards I tinker with filtering output of the file to make it more shortened and readable, as well as turning it into a clean CSV file.
 <img width="1657" height="828" alt="image" src="https://github.com/user-attachments/assets/c3755ef4-6f36-4775-ae7e-b208bb6f7e80" />
